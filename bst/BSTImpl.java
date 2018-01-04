@@ -53,6 +53,23 @@ public class BSTImpl implements BinarySearchTree {
     return root.recRmove(root, data);
   }
 
+  public int max(int a, int b) {
+    if (a >= b) {
+      return a;
+    } else {
+      return b;
+    }
+  }
+
+  @Override
+  public int height(BSTNode root) {
+    if (root == null) {
+      return 0;
+    } else {
+      return 1 + max(height(root.rightChild), height(root.leftChild));
+    }
+  }
+
   @Override
   public boolean search(int data) {
     return root.recSearch(data);
@@ -97,4 +114,5 @@ public class BSTImpl implements BinarySearchTree {
     System.out.print(root.getData() + " ");
     inOrderTraversal(root.rightChild);
   }
+
 }

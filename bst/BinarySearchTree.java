@@ -39,6 +39,13 @@ public interface BinarySearchTree {
   public BSTNode remove(int data);
 
   /**
+   * returns the height of the BST
+   *
+   * @return the height of the BST as an int
+   */
+  public int height(BSTNode root);
+
+  /**
    * Check if an given value is in the BST
    *
    * @param data an integer value to be searched
